@@ -8,13 +8,19 @@ class Library:
         # Dictionay of books
         self.checked_out_books = {}
 
+    # method to add a book
     def add_book(self, book):
         self.books.append(book)
+    # end of method add_book
 
+
+    # method to display books
     def display_catalog(self):
         for book in self.books:
             print(f"Title: {book.title}, Author: {book.author}, Copies Available: {book.copies}")
+    # end of method display_catalog
 
+    # method
     def checkout_book(self, title, quantity):
         if not isinstance(quantity, int) or quantity <= 0:
             print("Error: Quantity must be a positive integer.")
@@ -37,6 +43,7 @@ class Library:
         print(f"Error: Book '{title}' not found in the library.")
         return False
 
+    # method to return a book
     def return_book(self, title):
         if title in self.checked_out_books:
             due_date = self.checked_out_books[title]
@@ -64,11 +71,13 @@ class Library:
 
     # end of method return_book
 
+
     def calculate_due_date(self):
         standard_loan_period = 14
         today = datetime.datetime.today()
         due_date = today + datetime.timedelta(days=standard_loan_period)
         return due_date
+    # end of method calculate_due_date
 
     def calculate_late_fee(self, title):
         if title in self.checked_out_books:
@@ -81,3 +90,4 @@ class Library:
         else:
             print(f"Error: Book '{title}' was not checked out.")
             return 0
+    #end of method calculate_late_fee

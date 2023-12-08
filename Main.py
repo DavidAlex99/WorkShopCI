@@ -3,6 +3,7 @@ from Book import Book
 
 def main():
     library = Library()
+    # books added
     library.add_book(Book("Cien años de soledad", "Gabriel García Márquez", 5))
     library.add_book(Book("1984", "George Orwell", 4))
     library.add_book(Book("El señor de los anillos", "J.R.R. Tolkien", 3))
@@ -15,6 +16,7 @@ def main():
     library.add_book(Book("La Divina Comedia", "Dante Alighieri", 1))
 
     while True:
+        # Menu
         print("\nWelcome to Library")
         print("1. Show Book Catalog")
         print("2. Book loan")
